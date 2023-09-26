@@ -21,8 +21,7 @@ h1 {
 .navbar {
     display: flex;
     align-items: center;
-    margin-right: 20px;
-}
+    }
 
 .navbar ul {
     display: flex;
@@ -30,15 +29,18 @@ h1 {
 }
 
 .navbar a {
-    padding: 1rem;
+    padding: 8px;
     color: aliceblue;
     text-decoration: none;
 }
+
+
 
 .logo img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    padding: 0;
 }
 
 body {
@@ -48,19 +50,18 @@ body {
 
 .main {
     display: flex;
-    justify-content: space-between;
-    padding: 1rem 3rem;
+   margin: 2rem 3rem;
 
 }
 
 main {
     width: 75%;
-
-    margin-left: 25px;
+   
 }
 
 aside {
     width: 25%;
+    margin-right: 25px;
 
 }
 
@@ -70,13 +71,15 @@ aside {
     height: 600px;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5);
     border-radius: 5px;
-    padding: 1rem;    
+    padding: 1rem;
+    
 }
+
 .cards {
     width: calc(100% - 6rem);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(225px,1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     padding: 30px 0;
 
@@ -97,4 +100,49 @@ aside {
     font-size: 0.9rem;
     padding: 15px;
     background: #fafafa;
+}
+
+.hamurger-menu {
+    display: none;
+}
+@media (max-width:768px){
+    .hamurger-menu{
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+    .hamurger-menu i {
+        font-size: 2rem;
+        color: #ffffff;
+        margin: 5px 0;
+    }
+    header{
+        padding: 0 1rem;
+    }
+    .main{
+        flex-direction: column-reverse;
+        margin: 1rem;
+        }
+    main {
+        width: calc(100% - 2rem);
+        height: 500px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        }
+    
+    aside {
+        width: calc(100% - 2rem); 
+        height: 100px;   
+    }
+    .cards{grid-template-columns: 1fr;
+    gap: 50px;
+    }
+}
+
+
+@media (min-width:768px) and (max-width:1200px){
+    .cards{grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    }
 }
